@@ -1,0 +1,12 @@
+ch.unizh.ini.friend
+ch.unizh.ini.friend.browser
+ch.unizh.ini.friend.graphics
+ch.unizh.ini.friend.gui
+ch.unizh.ini.friend.record
+ch.unizh.ini.friend.simulation
+ch.unizh.ini.friend.simulation.cells
+ch.unizh.ini.friend.simulation.filter
+ch.unizh.ini.friend.simulation.synapses
+ch.unizh.ini.friend.stimulus
+ch.unizh.ini.friend.tests
+ch.unizh.ini.friend.topology

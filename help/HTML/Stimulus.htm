@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Solutionsoft HelpBreeze JavaHelp Edition">
+<TITLE>Stimulus</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="../javahelp.css">
+</HEAD>
+<BODY BGCOLOR=#ffffff>
+<H1>Stimulus</H1>
+<P>You can use spot, bar, edge, or grating stimuli. Here's what the stimuli look like:</P>
+<P><EM></EM></P>
+<P>&nbsp;</P>
+<P><IMG height=168 hspace=0 src="../Images/stimuli.gif" width=431 border=0></P>
+<H2>Stimulus Hot keys</H2>
+<UL>
+  <LI>Mouse left press momentarily hides the stimulus 
+  <LI>Mouse right click brings up the popup menu for 
+  controlling the stimulus 
+  <LI>The <A href="Mouse_wheel.htm">mouse wheel</A>   changes the angle, size, and length 
+  of the stimulus 
+  <LI>
+  <DIV align=left>
+  <TABLE cellSpacing=0 cellPadding=3 align=left bgColor=#ffffff border=1>
+    <CAPTION>Stimulus selection hot keys</CAPTION>
+    
+    <TR>
+      <TD>s</TD>
+      <TD>Spot stimulus</TD></TR>
+    <TR>
+      <TD>a</TD>
+      <TD>Bar stimulus</TD></TR>
+    <TR>
+      <TD>e</TD>
+      <TD>Edge stimulus</TD></TR>
+    <TR>
+      <TD>g</TD>
+      <TD>Grating stimulus</TD></TR></TABLE></ DIV></DIV></LI></UL>
+<H2>         
+            
+          
+         
+            
+       
+            
+            
+&nbsp;</H2>
+<H2>Why these stimuli?</H2>
+<P>These stimuli are a small subclass of all possible 
+stimuli, but they are special in terms of the simulation because their 
+intersections with the <A href="Photoreceptor.html">photoreceptor</A>         
+         shapes can be 
+rapidly computed using techniques borrowed from computer graphics for computing 
+the intersections of convex polygons. This computation--which comes for 
+free when you use optics and an imaging surface--is the most compute-intensive 
+part of the simulation. Using&nbsp;these rapidly-computable intersection 
+algorithms to compute the excitation of the photoreceptors allows us to devote 
+more time in the simulation to computing the dynamics of the cell 
+responses.</P>
+<P>The fact that we can only rapidly compute the responses to the polygon shapes 
+means that it is not easy to create stimuli that have varying brightness. So 
+forget about using sinusoidal grating stimuli.</P>
+<P>You may notice that when you use a grating stimulus, the responses of the 
+neurons greatly slow down.&nbsp; Even a simple grating stimulus is pretty tough 
+to compute, because the redraw of the stimulus by Java's graphics competes with 
+the computation of the responses.</P>
+</BODY>
+</HTML>

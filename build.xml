@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Friend Ant build and run specification -->
+<!-- $Id: build.xml,v 1.2 2003/07/31 16:27:37 tobi Exp $ -->
+
+<!-- Written to assume that classpath is rooted in the current directory. -->
+<!-- So this should be OK if you make this script in the root of a filesystem. -->
+<!-- If not, you may prefer to adjust the basedir, or move some directories around. -->
+<!-- The idea is that both Ant and NetBeans have to know what the package root is -->
+<!-- for the classes in your application. -->
+<project basedir="." default="all" name="friend">
+
+    <!-- Don't worry if you don't know the Ant syntax completely or need help on some tasks! -->
+    <!-- The standard Ant documentation is bundled. See Help | Help Sets | Ant 1.4.1 Manual. -->
+
+    <path id="base.path">
+      <pathelement path="${classpath}"/>
+      <pathelement location="classes"/>
+      <pathelement location="3rdPartyJars/jnlp.jar"/>
+      <pathelement location="3rdPartyJars/jh.jar"/>
+      <pathelement location="3rdPartyJars/jsearch.jar"/>
+      <pathelement location="help" />
+    </path>
+
+   <path id="project.class.path">
+        <pathelement location="classes" />
+        <pathelement path="${java.class.path}"/>
+    </path>
+    
+    <!--
+    
+    <path id="base1.3">
+        <pathelement path="d:\jdk1.3.1_05"/>
+        <pathelement path="d:\jdk1.3.1_05\jre\lib\rt.jar"/>
+        <pathelement path="d:\jdk1.3.1_05\jre\lib\i18n.jar"/>
+    </path>
+    
+    -->
+
+    <target name="init" >
+        <!-- You can set up any variables you want used throughout the script here. -->
+        <!-- To use e.g. Jikes, uncomment this line. -->
+        <!-- (Or make the same change in Tools | Options | Ant Settings | Properties.) -->
+        <!-- <property name="build.compiler" value="jikes"/> -->
+        <!-- You might like to set up some overridable paths, etc.: -->
+        <tstamp/>
+        <property name="build.classes.dir" value="classes"/>
+        <property name="classes" value="classes"/>
+        <property name="install-dir" value="\\zig\home\tobi\public_html\friend\program"/>
+        <property name="about-class" value="src/ch/unizh/ini/friend/gui/AboutDialog.java"/>
+        <property name="timestamp-file" value="classes/TSTAMP"/>
+        <property name="scp" value="C:/Program Files/WinSCP3/winscp.com"/>
+        <!-- <property name="policy" value="c:\documents and settings\tobi\my documents\config\policy" /> -->
+    </target>
+
+    <target depends="init" name="compile">
+        <!-- Both srcdir and destdir should be package roots. -->
+        <!-- They could be different of course; in that case NetBeans can also be set -->
+        <!-- up to compile to a different filesystem in the same way; see Compiler Types: -->
+        <echo message="Application compiling."/>
+        <mkdir dir="${build.classes.dir}"/>
+        <!-- <touch file="${about-class}"/>  --> <!-- this doesn't seem to result in a change in the file that when committed, updates the CVS revision -->
+        <echo file="${about-class}" append="yes" 
+message="
+// Built ${TODAY} ${TSTAMP}
+"/>
+        <echo file="${timestamp-file}" message="${TODAY} ${TSTAMP}" />
+        <javac debug="true" deprecation="false" destdir="classes" srcdir="src" source="1.5">
+            <!-- To add something to the classpath: -->
+            <classpath refid="base.path"/>
+        </javac>
+        <copy file="./src/ch/unizh/ini/friend/gui/SplashScreen.gif" tofile="./classes/ch/unizh/ini/friend/SplashScreen.gif" />
+        <copy file="./src/ch/unizh/ini/friend/gui/SplashScreen-color.gif" tofile="./classes/ch/unizh/ini/friend/SplashScreen-color.gif" />
+       <echo message="done compiling"/>
+
+    </target>
+
+    <target depends="jar, helpjar" name="windows-installer-build" >
+        <echo message="Building windows installer using GhostInstaller from www.ginstall.com"/>
+        <exec dir="build" executable="C:\Program Files\gInstall\Ghost Installer\Bin\GIBuild.exe" os="Windows XP" output="installer-build.txt">
+              <arg line="Installer.gi2"/>
+        </exec>   
+    </target>
+
+    <!--
+    
+    <target depends="init, clean" name="compile-1.3">
+        <echo message="Application compiling for java 1.3 target."/>
+        <javac debug="true" deprecation="true" destdir="classes" srcdir="src" target="1.3">
+            <classpath refid="base.path"/>
+            <bootclasspath refid="base1.3" />
+        </javac>
+        <copy file="./src/ch/unizh/ini/friend/gui/SplashScreen.gif" tofile="./classes/ch/unizh/ini/friend/SplashScreen.gif" />
+       <echo message="done compiling"/>
+    </target>
+
+    <target depends="init,compile-1.3" description="Runs friend in java 1.3" name="run-1.3">
+        <echo message="running friend jdk1.3.1_05 ..." />
+        <java classname="ch.unizh.ini.friend.Main" failonerror="true" fork="true">
+            <classpath refid="base.path"/>
+        </java>
+    </target>
+
+    <target depends="init,compile-1.3" name="jar-1.3">
+        <jar basedir="classes" includes="**/*.*" compress="true" manifest="build/friend.mf" jarfile="build/friend.jar">
+            <exclude name="**/*.java"/>
+            <exclude name="**/*.form"/>
+            <exclude name="friend.jar"/>
+            <exclude name="apidoc"/>
+        </jar>
+    </target>
+    
+    -->
+    <!-- makes property that signifies if help is out of date -->
+    <target name="chkHelpBuild">
+        <echo message="checking help system uptodate"/>
+          <uptodate property="helpBuild.notRequired" targetfile="build/friend-help.jar" >
+            <srcfiles dir="help" includes="friend-help.hs"/>
+            <srcfiles dir="help" includes="friend-helpTOC.xml"/>
+            <srcfiles dir="help" includes="**/*.htm"/>
+            <srcfiles dir="help" includes="**/*.gif"/>
+          </uptodate>
+     </target>
+  
+    <!-- jars up the help files that are created by the help authoring system e.g. HelpBreeze. --> 
+    <target name="helpjar" depends="chkHelpBuild" unless="helpBuild.notRequired" >
+        <echo message="making help jar"/>
+        <jar basedir="help" compress="true" jarfile="build/friend-help.jar">
+            <exclude name="**/*.psd"/>
+            <exclude name="**/*.prj"/>
+        </jar>
+    </target>
+        
+    <!--
+    <target depends="jar-1.3" name="install">
+    -->
+    <target depends="jar, helpjar, zipjavadoc, zipall, windows-installer-build" name="install">
+        <echo message="Installing friend"/>
+        <copy todir="${install-dir}" overwrite="yes" >
+            <fileset dir="./build" casesensitive="yes">
+                <include name="friend.jar"/>
+                <include name="Setup.exe"/>
+                <include name="friendapi.zip" />
+                <include name="friend.zip" />
+            </fileset>
+            <fileset dir="./3rdPartyJars" >
+                <include name="jh.jar"/>
+                 <include name="jsearch.jar"/>
+                 <include name="jnlp.jar"/>
+            </fileset>
+            <fileset dir="build" casesensitive="yes">
+                <include name="friend-help.jar" />
+            </fileset>
+        </copy>
+        <copy todir="${install-dir}/docs" overwrite="yes">
+            <fileset dir="docs" >
+                <include name="**"/>
+            </fileset>
+        </copy>
+    </target>
+      
+    <target depends="jar,helpjar,windows-installer-build,zipall,zipjavadoc" name="install-remotely">
+        <echo message="Installing remotely using scp"/>
+        <exec executable="${scp}" dir="build" os="Windows XP"  >
+             <arg line="friend.jar friend-help.jar Setup.exe friendapi.zip friend.zip tobi@www.ini.unizh.ch:/public_html/friend/program"/>
+        </exec>
+    </target>
+
+    <target depends="init,compile" name="jar">
+        <!-- To make a standalone app: -->
+        <!-- 1. Create a myapp.mf manifest somewhere. -->
+        <!-- 2. Put in it: -->
+        <!--    Manifest-Version: 1.0 -->
+        <!--    Main-Class: com.foo.Main -->
+        <!-- 3. Pass to <jar>: manifest="myapp.mf" -->
+        <jar basedir="classes" compress="true" manifest="build/friend.mf" jarfile="build/friend.jar">
+            <exclude name="**/*.java"/>
+            <exclude name="**/*.form"/>
+            <exclude name="friend.jar"/>
+            <exclude name="apidoc"/>
+        </jar>
+    </target>
+
+    <target depends="jar" description="Self sign jar" name="signjar">
+        <signjar jar="install/friend.jar"  storepass="zap.210" keystore="install/myKeyStore" alias="myself" >
+        </signjar>
+    </target>
+
+    <target depends="init,jar,javadoc" description="Build everything." name="all">
+        <echo message="Application built."/>
+    </target>
+
+    <target depends="init,compile" description="Runs black and white friend" name="run-luminance">
+        <echo message="running friend..." />
+        <java classname="ch.unizh.ini.friend.Main" failonerror="true" fork="true"> <!-- must fork or audio is not available -->
+            <classpath refid="base.path"/>
+        </java>
+    </target>
+
+    <target depends="init,compile" description="Runs friend" name="run-color">
+        <echo message="running color friend..." />
+        <java classname="ch.unizh.ini.friend.Main" failonerror="true" fork="true"> <!-- must fork or audio is not available -->
+            <classpath refid="base.path"/>
+            <arg value="-color"/>
+        </java>
+    </target>
+
+    <target depends="init" description="Javadoc for my API." name="javadoc">
+        <mkdir dir="docs"/>
+        <javadoc destdir="docs" packagenames="ch.unizh.ini.friend.*" 
+            Overview="src\ch\unizh\ini\friend\overview.html"
+            link="http://java.sun.com/j2se/1.4.1/docs/api/"
+            header="The Physiologist's Friend Simulation API"
+            additionalparam="-breakiterator -source 1.4 "
+            windowTitle="Physiologist's Friend Program API Documentation"
+            >
+            <footer><![CDATA[<a href="http://www.ini.unizh.ch/~tobi/friend">http://www.ini.unizh.ch/~tobi/friend</a> ]]></footer>
+            <sourcepath>
+                <pathelement location="src"/>
+            </sourcepath>
+            <classpath refid="base.path"/>
+        </javadoc>
+    </target>
+
+    <target depends="javadoc" name="zipjavadoc">
+        <zip destfile="build/friendapi.zip">
+            <fileset dir="docs"/>
+        </zip>
+    </target>
+    
+    <target name="zipall">
+        <zip destfile="build/friend.zip" basedir="." excludes="build/**,**/*.psd,classes/**,**/Thumbs.db,nbproject/private/**"/>
+   </target>
+  
+    <target depends="init" description="Clean all build products." name="clean">
+        <delete>
+            <fileset dir="classes">
+                <include name="**/*.class"/>
+            </fileset>
+        </delete>
+    <delete file="jars/friend.jar"/>
+     <!--   <delete dir="apidoc"/> -->
+    </target>
+    
+</project>
+<!-- 
+$Log: build.xml,v $
+Revision 1.2  2003/07/31 16:27:37  tobi
+
+replaces FriendAnt.xml with standard named build.xml
+
+Revision 1.1  2003/07/31 15:05:51  tobi
+changed to standard name build.xml for ant build spec
+
+Revision 1.37  2003/07/06 05:21:51  tobi
+*** empty log message ***
+
+Revision 1.36  2003/06/23 11:30:14  tobi
+greatly improved recording display speed, capability
+
+added full screen exclusive display
+
+Revision 1.35  2003/06/16 07:46:27  tobi
+fixed javadoc
+
+added target to build windows installer
+
+Revision 1.34  2003/06/15 19:22:20  tobi
+changed target name to luminance
+
+Revision 1.33  2003/06/06 16:35:02  tobi
+installer now builds source and doc zips and copies it all  over to the install directory.
+
+Revision 1.32  2003/06/06 12:38:24  tobi
+added zip of all and zip of docs to build
+
+Revision 1.31  2003/06/06 08:41:31  tobi
+added echo >> AboutDialog so global commits will update CVS commit date for AboutDialog.
+
+Revision 1.30  2003/06/05 16:47:16  tobi
+added dependency check for help system jar file.
+
+Revision 1.29  2003/05/11 09:55:48  tobi
+comment added about touch of aboutdialog not changing CVS status
+sufficiently to result in new revision date
+
+Revision 1.28  2003/05/11 09:34:39  tobi
+now echos tstamp onto TSTAMP file, which is used in AboutDialog.
+
+Revision 1.27  2003/05/11 08:26:30  tobi
+resolved conflict
+
+Revision 1.26  2003/05/10 17:27:39  jgyger
+Merge from color-branch
+
+-->

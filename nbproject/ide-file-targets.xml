@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir=".." name="friend-IDE">
+    <!-- TODO: edit the following target according to your needs -->
+    <!-- (more info: http://www.netbeans.org/kb/55/freeform-config.html#compilesingle) -->
+    <target name="compile-selected-files-in-src">
+        <fail unless="files">Must set property 'files'</fail>
+        <mkdir dir="classes"/>
+        <javac destdir="classes" includes="${files}" source="1.5" srcdir="src">
+            <classpath path="3rdPartyJars/jh.jar;3rdPartyJars/jnlp.jar;3rdPartyJars/jsearch.jar"/>
+        </javac>
+    </target>
+</project>

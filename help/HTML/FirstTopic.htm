@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+
+<title>PhysioFriend</title>
+
+</head>
+
+<BODY bgColor=#ffffff>
+<DIV class=Section1>
+<H1><IMG height=211 alt="Icon for PhysioFriend" src="../webIcon.gif" width=169 align=left> The Physiologist's Friend Simulator 
+</H1>
+<P><B>PhysioFriend</B> lets you plot receptive fields of simulated retinal and 
+cortical cells. It is intended for classroom demonstration of cell response 
+properties. You can hear the cell responses as though you were doing a recording 
+from a live animal. You can choose between photoreceptor, horizontal cell, on 
+and off bipolar cells, on and off ganglion cells, and several types of cortical 
+cells. You can use bar, edge, or grating stimuli. You will hear how the cell 
+responds as you use your mouse to move the stimulus. The stimulus orientation, 
+contrast, size, spatial frequency can be easily manipulated through the 
+keyboard. </P>
+<P>PhysioFriend is 100% written in <A href="http://java.sun.com/">Java</A>. All 
+you need is the Java run time environment (at least version 1.3+) and a sound 
+card--if you want to hear the cells. (If you don't have a sound card, you can 
+still see the cells responses on an activity meter.) </P>
+<H2>Requirements: </H2><B>Apple's Java Runtime Environent is apparently far 
+behind other releases. PhysioFriend does not seem to run well, even under the 
+JRE 1.3.1 that ships with OS10.2. The components of PhysioFriend show up very 
+strangely and response is extremely slow. For the moment, it looks like you 
+cannot run PhysioFriend on Macs. </B>
+<UL>
+  <LI><A href="http://java.sun.com/downloads/index.html">Java Run Time 
+  Environment</A> (JRE) version 1.3+. Available for Windows, Linux, Macintosh 
+  and other platforms. As of right now, Apple's OS 10.1 comes with Java 
+  installed, but only version 1.3. If you are on another platform you will 
+  probably need to install the JRE if you have not done so already. 
+  <LI>Java compatible sound card. Java seems to know about most sound cards. 
+  </LI></UL>
+<H2>Downloading, installing, and running PhysioFriend: </H2>
+<UL>
+  <LI><A href="onestep.html">Download, install and 
+  run Java, Java Web Start, and PhysioFriend in one step</A> if you're running Internet Explorer 5+ or 
+  Netscape 4.x.</A>. </LI></UL>
+<UL>
+  <LI><A href="friend.jnlp">Download and launch the 
+  latest version of PhysioFriend</A> in one step if you have <A 
+  href="http://java.sun.com/products/javawebstart/">Java Web Start</A> 
+  installed. 
+  <UL>
+    <LI>Java Web Start does the download, install, and launch in one step, and 
+    it keeps you automatically up-to-date with the latest version of 
+    PhysioFriend. Java Web Start comes by default in Mac OS 10.1. For other 
+    platforms, it is installed by default in Java 1.4.1+, and is available as a 
+    separate download for other Java versions. 
+    <LI>If you have Java installed, you may not have Java Web Start as well, so 
+    you may need to install the updater to get Web Start. 
+    <LI>Under <B>linux</B>, installing 
+    the Java RPM does not install Java Web Start. You still need to go the Java 
+    installation directory (typically something like 
+    </I>/usr/java/j2re1.4.1</I>) and then unzip the Java Web 
+    Start archive and run a separate installer script to get Web Start. 
+    <LI>If you're having trouble with getting <A 
+    href="http://www.mozilla.org/">Mozilla</A> to recognize the <I>jnlp</I> 
+    type, you may need to install <A 
+    href="http://nsdl.sdsc.edu/apps/MozillaWS_help.html">Java Web Start as a 
+    helper application to use with files with the <I>.jnlp</I> extension</A>. 
+    </LI></UL>
+  <LI>For <B>Windows</B>, you can <A href="Setup.exe">download a Windows installer</A>. Run 
+  <I>Setup.exe</I> to install PhysioFriend along with Start Menu and Desktop 
+  shortcuts. 
+  <LI>For <B>other platforms</B> without Java Web Start but with the JRE (1.3+) 
+  installed, download <A href="friend.jar">friend.jar</A>. From the command line, PhysioFriend 
+  can be started with <BR><I>java -jar friend.jar</I> </LI></UL>
+<H2>Quick user guide </H2>
+<P>&nbsp;<IMG height=750 hspace=0 src="../Images/ScreenShot1.gif" width=864 border=0> </P>
+<UL>
+  <LI When  start PhysioFriend, see bar stimulus a blank screen. The simulation already 
+  running and you will be observing response one of the photoreceptors. 
+  < li>
+  <LI>You won't hear anything because the photoreceptor is not a spiking cell, 
+  but you can observe the response of the photoreceptor on the activity bar on 
+  the right. 
+  <LI>To get help on the keyboard shortcuts, use the Help menu or hit F1. 
+  <LI>To select the cell you want to observe, use the Cell menu. 
+  <LI>If the cell is a spiking cell, you will hear its spikes and you can see 
+  the spike rate on the activity meter. If the cell is a graded cell you will 
+  only see the response on the activity meter. 
+  <LI>To select the stimulus you want to use, use the Stimulus menu. 
+  <LI>To view the photoreceptor locations, select View.../Photoreceptors 
+  <LI>Explore the menus and try the popup menu on the tangent screen. There are 
+  many keyboard shortcuts that you can pick up from the menus or from the Hot 
+  Key help. </LI></UL>
+<H2>How it works </H2>
+<P>PhysioFriend does a relatively simple-minded simulation of the cells. The 
+intention is not to simulate the beautiful complexity of the visual system, but 
+just to capture some aspects of how the cells seem to respond. These cell 
+responses should pass the Turing test—they should behave and sound like real 
+cells. </P>
+<H2>Version information </H2>
+<P><I>If you use Java Web Start, you will always be up-to-date with the latest 
+version.</I> </P>
+<H2>Authors </H2>
+<P>PhysioFriend was written by Christof Marti and 
+<AHREF="HTTP: designtimesp="4421" www.ini.unizh.ch ~tobi?>Tobi Delbruck</A> at the <A 
+href="http://www.ini.unizh.ch/">Institute of Neuroinformatics</A>, University 
+and ETH Zurich, Switzerland. </P></DIV>
+
+</BODY>
+
+</html>

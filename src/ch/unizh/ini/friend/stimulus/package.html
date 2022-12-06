@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  <BODY>
+  The stimuli. A stimulus is a hierarchy of objects. 
+At the core is some geometry, a {@link ch.unizh.ini.friend.graphics.ShapeList}. A <code>ShapeList</CODE>
+is {@link ch.unizh.ini.friend.graphics.Transformable}, which means that is 
+can be transformed in a number of different ways as a whole.
+In the {@link ch.unizh.ini.friend.stimulus.Stimulus}, (more concretely, 
+an instantiaion of {@link ch.unizh.ini.friend.stimulus.ConcreteStimulus}), 
+the <CODE>Transformable</CODE> <CODE>ShapeList</CODE> is
+wrapped up in a {@link ch.unizh.ini.friend.graphics.SeparateTransforms}. The transforms are actually an instance of 
+{@link ch.unizh.ini.friend.graphics.ConcreteSeparateTransforms}, wrapped inside a synchronizer 
+{@link ch.unizh.ini.friend.graphics.SynchronizedSeparateTransforms}. 
+<p>
+These transforms, along with the shapes, specify the actual shape of the 
+stimulus displayed on the {@link ch.unizh.ini.friend.gui.TangentScreen} and used to compute the {@link ch.unizh.ini.friend.simulation.cells.Photoreceptor}
+responses. In fact the <CODE>Stimulus</CODE> must be given to the <CODE>Photoreceptor</CODE> on construction so that the <CODE>Photoreceptor</CODE>
+knows how to compute its response to the <CODE>Stimulus</CODE>.
+<p>
+Concrete stimuli can be built using the static methods in {@link ch.unizh.ini.friend.stimulus.StimulusShapeFactory}.
+<p>
+Because the stimulus is given to the photoreceptors on their construction, it is not easily possible to change it after 
+the simulation is constructed. Instead, to change the shape of the stimulus, you can change the geometry of the stimulus, e.g.:
+<pre>
+        ShapeList newShapes=StimulusShapeFactory.makeBarShape();
+        stimulus.getTransforms().setGeometry(newShapes);
+</pre>
+
+<p>
+Here is the UML diagram for this package:
+<p>
+<img src="doc-files/stimulus.gif">
+
+  </BODY>
+</HTML>

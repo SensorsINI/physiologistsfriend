@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir=".." name="friend-IDE">
+    <import file="../build.xml"/>
+    <!-- TODO: edit the following target according to your needs -->
+    <!-- (more info: http://www.netbeans.org/kb/41/freeform-config.html#debugj2se) -->
+    <target depends="init,compile" description="Runs black and white friend" name="debug-nb">
+        <echo message="running friend..."/>
+        <nbjpdastart addressproperty="jpda.address" name="friend" transport="dt_socket">
+            <classpath refid="base.path"/>
+        </nbjpdastart>
+        <java classname="ch.unizh.ini.friend.Main" failonerror="true" fork="true">
+            <!-- must fork or audio is not available -->
+            <classpath refid="base.path"/>
+            <jvmarg value="-Xdebug"/>
+            <jvmarg value="-Xnoagent"/>
+            <jvmarg value="-Djava.compiler=none"/>
+            <jvmarg value="-Xrunjdwp:transport=dt_socket,address=${jpda.address}"/>
+        </java>
+    </target>
+</project>

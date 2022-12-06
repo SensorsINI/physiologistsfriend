@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Solutionsoft HelpBreeze JavaHelp Edition">
+<TITLE>Recording</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="../javahelp.css">
+</HEAD>
+<BODY BGCOLOR=#ffffff>
+<H1>Recording</H1>
+<P>The Record menu lets you mark positions on the tangent 
+sceen or record from the simulation 
+or from the microphone input.</P>
+<H2>Marking the tangent screen</H2>
+<P><IMG height=530 hspace=0 src="../Images/marker.gif" width=671 border=0></P>
+<P>The <A href="Hot_Keys.htm">hot key</A> 
+<STRONG>M</STRONG> will draw the outline of the present stimulus on the tangent 
+screen. Each <STRONG>M</STRONG> will add a new outline.&nbsp; You can see how 
+this is used above to determine the center of the receptive field. The hot key 
+<STRONG>C</STRONG>               
+                
+    will clear the marks.</P>
+<H2>Recording spikes</H2>
+<P>          
+     The recordings are displayed as spike-triggered 
+stimuli. Each spike triggers the display of the stimulus at the time of the 
+spike. This is called <EM>spike-triggered averaging</EM> if it is done over a large 
+number of stimuli.</P>
+<P><IMG height=219 hspace=0 src="../Images/recordingMenu.gif" width=224 
+border=0></P>
+<UL>
+  <LI>Enable recording - turns recording on and off 
+  <LI>Clear - clears recorded spike-triggered stimuli 
+  <LI>Set spike persistence - sets the number of spikes to 
+  remember 
+  <LI>Fade spike-triggered stimuli - fades older 
+  spike-triggered stimuli to the background color 
+  <LI>Fill in spike-triggered stimuli - fills in the spike triggered stimuli 
+  instead of displaying them as outlines.</LI></UL>
+<P>Recorded spikes are displayed with outlined stimuli on the tangent screen, 
+providing a very simple spike-triggered average of the stimuli that cause 
+responses.</P>
+<P><IMG height=609 hspace=0 src="../Images/recording.gif" 
+width=587 border=0>           
+           
+</P>
+<H3>Microphone recording</H3>
+<P>The microphone recording option is for use with the <A 
+href="http://www.ini.unizh.ch/~tobi/friend/chip">Physiologist's Friend 
+Chip</A>. You can plug in any analog 
+source to the microphone or just record from the built in microphone on your 
+computer. Each time the input rises above a threshold (hard coded) the program 
+records a spike. The input must drop below the threshold minus a hystersis 
+before a new spike can be detected -- this hystersis tries to avoid triggering 
+multiple spikes on a noisy input. This recording method is best suited to 
+digital inputs that are at least 1/4000 second wide.</P>
+<P>&nbsp;</P>
+</BODY>
+</HTML>

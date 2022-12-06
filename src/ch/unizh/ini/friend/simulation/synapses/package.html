@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  <BODY>
+This package contains specific synapse types, which are subclasses of
+{@link ch.unizh.ini.friend.simulation.synapses.AbstractSynapse}.
+A synapse references one or more input cells or, more general, implementors of
+{@link ch.unizh.ini.friend.simulation.ServesOutput} (AbstractSynapse implements ServesOutput)
+A synapse provides its output through the ServesOutput interface to the cell it corresponds to.
+<p>
+There is currently only one concrete class {@link ch.unizh.ini.friend.simulation.synapses.ScalingSynapse}
+in this package, which basically multiplies its input with a scalar (or weight) and makes the result
+available to its cell.
+<p>
+It is noteworthy that the concept of a dendrite would software-technically and in this framework be the same as
+as that of a synapse. The computation of both has to be done exactly once per simulation step and they
+therefore do not have to provide any means of double-buffering or even simple buffering of their output.
+It suffices for both to 'have' inputs and an output, where the computation of the output is done when the cell
+requests it.
+<p>
+Synapses are instantiated in {@link ch.unizh.ini.friend.simulation.SimulationSetupFactory} and other factory methods.
+  </BODY>
+</HTML>

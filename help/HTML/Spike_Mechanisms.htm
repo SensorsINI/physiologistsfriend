@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Solutionsoft HelpBreeze JavaHelp Edition">
+<TITLE>Spike Mechanisms</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="../javahelp.css">
+</HEAD>
+<BODY BGCOLOR=#ffffff>
+<H1>Spike Mechanisms</H1>
+<P>In simulations, the level of detail at which spike 
+mechanisms are simulated can vary greatly. You could choose to simulate a 
+complex conductance-bsased model like&nbsp;the famous&nbsp;Hodgkin-Huxley sodium-potassium mechanism, 
+or you could emit spikes randomly at a mean rate proportional to the input.</P>
+<P>            
+            
+         
+         In this program, we use 
+mostly a simplified <A href="IntegrateFireCell.html" >Integrate-and-File 
+(IF)</A>             
+   mechanism. We may also be using a Poisson spike rate mechanism.</P>
+<P>            In 
+either case, the results are spike events that you can hear on the speaker.</P>
+<H2>Spike rate encoding</H2>
+<P>Because the number of cells is so small, the cell 
+outputs are not taken to be the actual spikes, but rather the instantaneous 
+spike rate.</P>
+<P>                
+         This spike rate is 
+the reciprocal of the time between the last two spikes, <A 
+href="LowPass_Filter.htm">lowpass filtered </A>with some time constant 
+of about 100ms. It is this value that you can observe in the <A 
+href="Quick_Start.htm#activity">activity bar</A>    
+              
+.</P>
+</BODY>
+</HTML>

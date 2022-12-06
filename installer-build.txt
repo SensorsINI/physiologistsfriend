@@ -1,0 +1,87 @@
+
+Ghost Installer 3.5 Console Builder
+===================================
+Loading project...
+Starting new package...
+Getting information about files...
+Creating package file...
+Compressing presetup files...
+  Adding C:\DOCUME~1\tobi\LOCALS~1\Temp\2RL866VR\presetup.rgn         Ok  
+  Adding C:\DOCUME~1\tobi\LOCALS~1\Temp\2RL866VR\presetup.bmp         Ok  
+  Adding readme.txt                                                   Ok  
+  Adding license.txt                                                  Ok  
+  Adding C:\Program Files\gInstall\Ghost Installer\Plugins\StdUI\StdUI.dll  12%
+  Adding C:\Program Files\gInstall\Ghost Installer\Plugins\StdUI\StdUI.dll  34%
+  Adding C:\Program Files\gInstall\Ghost Installer\Plugins\StdUI\StdUI.dll  57%
+  Adding C:\Program Files\gInstall\Ghost Installer\Plugins\StdUI\StdUI.dll  79%
+  Adding C:\Program Files\gInstall\Ghost Installer\Plugins\StdUI\StdUI.dll  Ok  
+  Adding C:\Program Files\gInstall\Ghost Installer\Plugins\StdUI\lng\Enu.lng  56%
+  Adding C:\Program Files\gInstall\Ghost Installer\Plugins\StdUI\lng\Enu.lng  Ok  
+  Adding C:\DOCUME~1\tobi\LOCALS~1\Temp\2RL866VR\db.pdb               Ok  
+  Adding C:\DOCUME~1\tobi\LOCALS~1\Temp\2RL866VR\main.pdb             Ok  
+  Adding C:\Program Files\gInstall\Ghost Installer\Bin\lng\Enu.lng    Ok  
+  Adding C:\DOCUME~1\tobi\LOCALS~1\Temp\2RL866VR\Uninstall.exe        11%
+  Adding C:\DOCUME~1\tobi\LOCALS~1\Temp\2RL866VR\Uninstall.exe        27%
+  Adding C:\DOCUME~1\tobi\LOCALS~1\Temp\2RL866VR\Uninstall.exe        44%
+  Adding C:\DOCUME~1\tobi\LOCALS~1\Temp\2RL866VR\Uninstall.exe        60%
+  Adding C:\DOCUME~1\tobi\LOCALS~1\Temp\2RL866VR\Uninstall.exe        77%
+  Adding C:\DOCUME~1\tobi\LOCALS~1\Temp\2RL866VR\Uninstall.exe        93%
+  Adding C:\DOCUME~1\tobi\LOCALS~1\Temp\2RL866VR\Uninstall.exe        Ok  
+Compressing data files...
+  Adding runFriend.cmd                                                Ok  
+  Adding runFriendColor.cmd                                           Ok  
+  Adding friend.jar                                                   11%
+  Adding friend.jar                                                   23%
+  Adding friend.jar                                                   35%
+  Adding friend.jar                                                   47%
+  Adding friend.jar                                                   59%
+  Adding friend.jar                                                   71%
+  Adding friend.jar                                                   83%
+  Adding friend.jar                                                   95%
+  Adding friend.jar                                                   Ok  
+  Adding ..\3rdPartyJars\jh.jar                                       5%
+  Adding ..\3rdPartyJars\jh.jar                                       15%
+  Adding ..\3rdPartyJars\jh.jar                                       24%
+  Adding ..\3rdPartyJars\jh.jar                                       33%
+  Adding ..\3rdPartyJars\jh.jar                                       43%
+  Adding ..\3rdPartyJars\jh.jar                                       52%
+  Adding ..\3rdPartyJars\jh.jar                                       62%
+  Adding ..\3rdPartyJars\jh.jar                                       71%
+  Adding ..\3rdPartyJars\jh.jar                                       81%
+  Adding ..\3rdPartyJars\jh.jar                                       90%
+  Adding ..\3rdPartyJars\jh.jar                                       Ok  
+  Adding ..\3rdPartyJars\jh.jar                                       9%
+  Adding ..\3rdPartyJars\jh.jar                                       18%
+  Adding ..\3rdPartyJars\jh.jar                                       28%
+  Adding ..\3rdPartyJars\jh.jar                                       37%
+  Adding ..\3rdPartyJars\jh.jar                                       47%
+  Adding ..\3rdPartyJars\jh.jar                                       56%
+  Adding ..\3rdPartyJars\jh.jar                                       66%
+  Adding ..\3rdPartyJars\jh.jar                                       75%
+  Adding ..\3rdPartyJars\jh.jar                                       84%
+  Adding ..\3rdPartyJars\jh.jar                                       94%
+  Adding ..\3rdPartyJars\jh.jar                                       Ok  
+  Adding ..\3rdPartyJars\jnlp.jar                                     Ok  
+  Adding friend-help.jar                                              1%
+  Adding friend-help.jar                                              7%
+  Adding friend-help.jar                                              14%
+  Adding friend-help.jar                                              20%
+  Adding friend-help.jar                                              27%
+  Adding friend-help.jar                                              33%
+  Adding friend-help.jar                                              40%
+  Adding friend-help.jar                                              46%
+  Adding friend-help.jar                                              52%
+  Adding friend-help.jar                                              59%
+  Adding friend-help.jar                                              65%
+  Adding friend-help.jar                                              72%
+  Adding friend-help.jar                                              78%
+  Adding friend-help.jar                                              85%
+  Adding friend-help.jar                                              91%
+  Adding friend-help.jar                                              98%
+  Adding friend-help.jar                                              Ok  
+  Adding readme.txt                                                   Ok  
+  Adding license.txt                                                  Ok  
+Closing package file...
+Converting package to SFX...
+
+Setup building completed.

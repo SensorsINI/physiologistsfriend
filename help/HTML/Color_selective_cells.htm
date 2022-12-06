@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Solutionsoft HelpBreeze JavaHelp Edition">
+<TITLE>Color selective cells</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="../javahelp.css">
+</HEAD>
+<BODY BGCOLOR=#ffffff>
+<H1>Color selective cells</H1>
+<P>If you are running the&nbsp;simulation of color 
+selective cells (<A href="Luminance_and_Color_Simulations.htm">Simulation 
+menu</A> ) you 
+can play with color selective cells. Right click in the tangent screen to <A 
+href="Color_picker.htm">pick a stimulus and background color</A>           
+       .</P>
+<P>By choosing a cell using the Cell menu, you&nbsp;can 
+monitor different <A href="#colorCones">color-selective cone types</A>              (L, M, or S) and 
+different types of color-selective <A href="#colorHorizontalCells">horizontal 
+cells</A>, <A href="#colorBipolarCells">bipolar cells</A>,&nbsp;and <A 
+href="#colorGanglionCells">ganglion cells</A>                 
+    .</P>
+<P><IMG height=395 hspace=0 
+src="../Images/colorCellMenu.gif" width=204 border=0>                 
+    </P>
+<P>        Inspecting this list shows a lot 
+of&nbsp;replication over different colors. One thing that may stand out, however, is the 
+lack of a blue-OFF channel. No one has seen evidence of a channel to represent 
+blue-OFF.&nbsp; Other than the blue channel, all the channels represent color 
+information in the usual rectified manner: the ON and OFF channels separately transmit information about local contrast that is brighter or 
+darker than the surrounding context.</P>
+<H2><A name=colorCones></A>            
+             
+               
+           
+                     
+ Color selective cone types</H2>
+<P>The 3 types of cones model the LMS (Long, Middle, Short) 
+color selectivities of biological cones. You can play with these photoreceptor 
+models by <A href="Color_picker.htm">varying the stimulus color</A> and observing 
+the LMS values of the colors you            
+             
+               
+           
+                choose. The cone spectral responses 
+are shown in these curves:</P>
+<P><IMG height=375 hspace=0 src="../Images/lms.jpg" 
+width=500 border=0></P>
+<P>Note how the L and M senstivities are very similar. The following plot shows 
+the difference between each curve and the average of L and M:</P>
+<P><IMG height=375 hspace=0 src="../Images/lms-diff.jpg" width=500 border=0></P>
+<H2><A name=colorHorizontalCells></A>                 
+ Color selective horizontal cells</H2>
+<P>         The         L and M horizontal cells average over the 
+L and M cones respectively.</P>
+<P>   The L+M and L+M+S horizontal cells average over multiple 
+types of cones and represent a measure of the luminance. Since there are few S 
+cones compared with L and M cones, these models are pretty close to each   other in reality. In the simulation, they differ because the simulation has equal numbers 
+of LM and S cones.</P>
+<P>The most realistic simple model of color-selective 
+horizontal cells is that they don't exist; there is no strong evidence for a 
+color-selective invervation of photoreceptor cone pedicles by horizontal cell 
+processes. Any color-selectivity in horizontal cells appears to be accidental 
+and due to random perturbations in the cone types that are innervated by the 
+horizontal cells. Since most cones are either L or M type, most horizontal cells 
+will be of type L+M. This L+M cell is the horizontal cell type that is used for 
+all the bipolar cell modeling. It is most responsive to L+M=       
+              
+                 
+              
+          
+                       
+    yellow.</P>
+<H2><A name=colorBipolarCells></A>                 
+ Color selective bipolar cells</H2>
+<P>   The simulations of color-selective bipolar cells are 
+closest to midget bipolar cells, which connect directly to a single cone. These 
+cells appear to have a   "private line" to the brain, a term coined by one of the pioneers of 
+work on the color system.</P>
+<P>Each of the simulated color-selective bipolar cells is connected to a single cone and with the opposite type of synapse 
+to the L+M horizontal cell.</P>
+<P>The receptive fields look like the following:</P>
+<P><IMG height=324 hspace=0 src="../Images/Slide2.gif" 
+width=420 border=0></P>
+<P>      For&nbsp;example, the Bipolar red-on cell is excited by&nbsp;the center&nbsp;L cone&nbsp;and inhibited 
+by the L+M horizontal cell..</P>
+<P>   What about the Bipolor red-off cell? It is excited by 
+darkness in the center and&nbsp;(L+M=                 
+  yellow)&nbsp;in the surround.</P>
+<P>          The best stimulus for each cell type 
+is shown in the following:</P>
+<P><IMG height=323 hspace=0 src="../Images/Slide1.gif" 
+width=397 border=0>                 
+    </P>
+<H2><A name=colorGanglionCells></A>                 
+ Color selective ganglion cells</H2>
+<P>                 
+The color selective ganglion cells.are simply connected 
+directly to the corresponding bipolar cells. They have                 
+exactly the same receptive fields.</P>
+<P>                 
+    &nbsp;</P>
+</BODY>
+</HTML>

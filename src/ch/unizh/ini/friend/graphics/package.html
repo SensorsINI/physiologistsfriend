@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  <BODY>
+Graphics objects and interfaces.
+The heart of the <CODE>graphics</CODE> package are the interfaces {@link ch.unizh.ini.friend.graphics.Transformable}
+and {@link ch.unizh.ini.friend.graphics.Intersectable}. <CODE>Transformable</CODE> means that the object can be transformed
+by a number of methods, and <CODE>Intersectable</CODE> means that the object's area can be computed and its intersection shape with
+other <CODE>Intersectable</CODE> can be obtained.
+<p>
+The transformations that can be applied are buffered  -- each of the possible
+transforms (rotations, scaling, and translation} are separately buffered and each can be manipulated.
+The possible transformations are specified by the interface {@link ch.unizh.ini.friend.graphics.SeparateTransforms}.
+Another interface, {@link ch.unizh.ini.friend.graphics.BufferedTransform}, specifies how the resulting 
+{@link ch.unizh.ini.friend.graphics.Transformable} can be obtained with the transforms applied.
+
+
+<p>
+The basic shape is a {@link ch.unizh.ini.friend.graphics.ConvexPolygon}, which is a <CODE>Transformable</CODE> that inherits its
+transformation methods from {@link ch.unizh.ini.friend.graphics.AbstractTransformable}.
+A {@link ch.unizh.ini.friend.graphics.ShapeList} is a collection of <CODE>Transformable</CODE> that can be transformed as a whole.
+
+<p>
+The basic transform is {@link ch.unizh.ini.friend.graphics.ConcreteSeparateTransforms}, which implements 
+{@link ch.unizh.ini.friend.graphics.SeparateTransforms}.
+<p>
+The relation between a shape like a <CODE>ConvexPolygon</CODE> and its <CODE>SeparateTransforms</CODE> should be kept clear.
+The transforms are constructed from a shape. This lets the transforms implement {@link ch.unizh.ini.friend.graphics.BufferedTransform#getTransformed} 
+so that you can obtain the transformed shape.
+<p>
+The relation between buffered transforms and transformations should also be kept clear.
+A {@link ch.unizh.ini.friend.graphics.Transformable} can be transformed, and a {@link ch.unizh.ini.friend.graphics.SeparateTransforms} can have
+its component transformations individually set.
+<p>
+Here is the UML diagram for this package:
+<p>
+<img src="doc-files/graphics.gif">
+ 
+  </BODY>
+</HTML>

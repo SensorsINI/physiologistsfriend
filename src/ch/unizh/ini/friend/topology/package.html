@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+  <HEAD>
+    <TITLE></TITLE>
+  </HEAD>
+  <BODY>
+  Classes that help assign a topology to the cells.
+The interface {@link ch.unizh.ini.friend.topology.Retinotopic} means that the 
+object has a {@link ch.unizh.ini.friend.topology.RetinotopicLocation} (basically
+a <code>Point2D</code>).
+<p>
+Static methods in {@link ch.unizh.ini.friend.topology.RetinotopicLocation} can find cells in the same or different layer that are corresponding,
+in a certain direction, etc.
+<p>
+{@link ch.unizh.ini.friend.topology.HexDirection} specifies a wrapping direction in the base hex coordinate system.
+<p>
+In order to use this notion of retinotopy, cells must correctly implement {@link ch.unizh.ini.friend.topology.Retinotopic}, e.g., they must
+have a {@link ch.unizh.ini.friend.topology.RetinotopicLocation} and correctly set it. This initialization is done, for example, in the static methods
+that construct arrays of cells from a preceeding layer.
+<p>
+The package UML is
+<p>
+
+<img src="doc-files/topology.gif">  
+
+  </BODY>
+</HTML>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Solutionsoft HelpBreeze JavaHelp Edition">
+<TITLE>Simulation</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="../javahelp.css">
+</HEAD>
+<BODY BGCOLOR=#ffffff>
+<H1>   Simulation</H1>
+<H1>   &nbsp;</H1>
+<H2>  Double buffering</H2>
+<P>Since this is a simulation on a serial machine, the cells 
+can only be updated sequentially. We use a standard technique for avoiding weird 
+effects due to the possible ordering up the updates of the states of the 
+simulation components (the cells) by <EM>double-buffering</EM> the cells. That 
+means that at each time step, the cells inputs come from the outputs of the 
+cells at the previous time step. The new outputs of all the cells are computed 
+but are not used until after all the cells' new states are computed. Then, in a 
+separate iteration over all the cells, all the cells output are updated to the 
+ones that were just computed.</P>
+<H2>Latency</H2>
+<P>This double-buffering means that any changes need to be propogated through 
+all levels of the simulation. A change to the stimulus will appear at the output 
+of a photoreceptor after one simulation cycle, but will only appear at a 
+cortical cell after approximately 5 cycles. </P>
+<H2>           
+               
+             
+    Simulation Properties </H2>
+<P>You can set the delay of the the simulation thread 
+between iterations, and the number of complete iterations over all the cells 
+during each simulation step using the <EM>Simulation/Properties...</EM>           
+               
+             
+     dialog. </P>
+<P>           
+  A short delay will cause more simulation steps to be computed per unit 
+real time. A large number of iterations will cause signals to propogate through 
+the layers of cells more quickly. </P>
+<P>       The peak spike rate 
+is determined by the simulation delay, because at most a single spike can be emitted 
+during each simulation step. If you set the delay to 100ms, the maximum 
+spike rate is limited to 10Hz. </P>
+<P>           
+               
+             
+      </P>
+</BODY>
+</HTML>

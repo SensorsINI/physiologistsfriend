@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.0" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowClosing" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="closeDialog"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-85,0,0,1,-88"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="helpLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;table cellpadding=&quot;1&quot; cellspacing=&quot;1&quot; border=&quot;1&quot; width=&quot;400&quot;&gt;&#xa;  &lt;tbody&gt;&#xa;    &lt;tr&gt;&#xa;      &lt;td valign=&quot;top&quot; align=&quot;right&quot; width=&quot;150&quot;&gt;r&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;      &lt;td valign=&quot;top&quot; width=&quot;300&quot;&gt;&lt;b&gt;R&lt;/b&gt;otate stimulus Pi/6&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;    &lt;/tr&gt;&#xa;    &lt;tr&gt;&#xa;      &lt;td valign=&quot;top&quot; align=&quot;right&quot; width=&quot;150&quot;&gt;SPACE&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;      &lt;td valign=&quot;top&quot; width=&quot;300&quot;&gt;Flash stimulus&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;    &lt;/tr&gt;&#xa;    &lt;tr&gt;&#xa;      &lt;td valign=&quot;top&quot; align=&quot;right&quot; width=&quot;150&quot;&gt;i&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;      &lt;td valign=&quot;top&quot; width=&quot;300&quot;&gt;&lt;b&gt;I&lt;/b&gt;nvert contrast&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;    &lt;/tr&gt;&#xa;    &lt;tr&gt;&#xa;      &lt;td valign=&quot;top&quot; align=&quot;right&quot; width=&quot;150&quot;&gt;b|d&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;      &lt;td valign=&quot;top&quot; width=&quot;300&quot;&gt;Make foreground &lt;b&gt;b&lt;/b&gt;righter|&lt;b&gt;d&lt;/b&gt;arker&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;    &lt;/tr&gt;&#xa;    &lt;tr&gt;&#xa;      &lt;td valign=&quot;top&quot; align=&quot;right&quot; width=&quot;150&quot;&gt;B|D&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;      &lt;td valign=&quot;top&quot; width=&quot;300&quot;&gt;Make background &lt;b&gt;B&lt;/b&gt;righter|&lt;b&gt;D&lt;/b&gt;arker&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;    &lt;/tr&gt;&#xa;    &lt;tr&gt;&#xa;      &lt;td valign=&quot;top&quot; align=&quot;right&quot; width=&quot;150&quot;&gt;UP|DOWN arrows&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;      &lt;td valign=&quot;top&quot; width=&quot;300&quot;&gt;Increase|Decrease height&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;    &lt;/tr&gt;&#xa;    &lt;tr&gt;&#xa;      &lt;td valign=&quot;top&quot; align=&quot;right&quot; width=&quot;150&quot;&gt;LEFT|RIGHT arrows&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;      &lt;td valign=&quot;top&quot; width=&quot;300&quot;&gt;Increase|Decrese width&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;    &lt;/tr&gt;&#xa;    &lt;tr&gt;&#xa;      &lt;td valign=&quot;top&quot; align=&quot;right&quot; width=&quot;150&quot;&gt;ENTER&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;      &lt;td valign=&quot;top&quot; width=&quot;300&quot;&gt;Toggle simulation running&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;    &lt;/tr&gt;&#xa;    &lt;tr&gt;&#xa;      &lt;td valign=&quot;top&quot; align=&quot;right&quot;&gt;&#xa;      &lt;blockquote&gt;m&lt;br&gt;&#xa;      &lt;/blockquote&gt;&#xa;      &lt;/td&gt;&#xa;      &lt;td valign=&quot;top&quot;&gt;Mute audio&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;    &lt;/tr&gt;&#xa;    &lt;tr&gt;&#xa;      &lt;td valign=&quot;top&quot; align=&quot;right&quot;&gt;&#xa;      &lt;blockquote&gt;p&lt;br&gt;&#xa;      &lt;/blockquote&gt;&#xa;      &lt;/td&gt;&#xa;      &lt;td valign=&quot;top&quot;&gt;Show Photoreceptor shapes&lt;br&gt;&#xa;      &lt;/td&gt;&#xa;    &lt;/tr&gt;&#xa;  &lt;/tbody&gt;&#xa;&lt;/table&gt;&#xa;&lt;br&gt;&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;&#xa;&#xa;&#xa;&#xa;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+    <Component class="javax.swing.JButton" name="okButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="OK"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="okButtonActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

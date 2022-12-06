@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>BipolarCell</title>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+</head>
+<BODY BGCOLOR=#ffffff>
+<H1><FONT color=#8080ff size=5>Bipolar Cell</FONT> </H1>
+<P>The bipolar cells compute the <EM>rectified</EM> difference between the 
+photoreceptor and horizontal cell outputs. </P>
+<P>Rectification manifests itself in two types of bipolar cells, <EM>on</EM> and 
+<EM>off</EM> type. &nbsp;The on type responds when the <A 
+href="Photoreceptor.html">photoreceptor </A>sees a 
+stimulus brighter than the surround, while the off type responds when the 
+stimulus to the photoreceptor is darker than the surround. The resting output of 
+bipolar cells is low--most of the output dynamic range is used to represent only 
+a particular sign of contrast, either on-ness or off-ness.</P>
+<P><IMG height=150 hspace=0 src="../Images/OnCenterRF.gif" width=150 
+align=middle border=0>     
+              
+           
+    </P>
+<P><EM>On-Center RF</EM>     
+              
+           
+    </P>
+<P> <IMG height=150 hspace=0 
+src="../Images/OffCenterRF.gif" width=150 align=middle border=0>     
+              
+           
+    &nbsp;</P>
+<P><EM>        
+          
+               
+            
+             
+              
+          Off-Center 
+RF<BR></EM><BR>We modeled this computation as&nbsp;the simple sigmoidal 
+function shown below that applied to the difference between a particular <A 
+href="Photoreceptor.html">photoreceptor </A>and the single <A 
+href="HorizontalCell.html">horizontal cell</A>. The sigmoid is shifted 
+so that the output for zero differential input is near zero. In reality, this 
+computation probably occurs in the triad synapse formed by the photoreceptor, 
+horizontal cell, and bipolar cell.</P>
+<P><IMG height=287 hspace=0 src="../Images/bipolarXferFunction.gif" width=354 
+align=middle border=0 ></P>
+<P><EM> Transfer 
+function of bipolar cell          
+          
+             
+            
+           
+   <BR><BR></EM></P>
+</BODY>
+</html>
